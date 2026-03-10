@@ -1,5 +1,256 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-
 .page {
-  /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+  font-family: var(--main-font);
+  font-size: var(--main-font-size);
+  color: var(--text-color);
+  background-color: var(--background-color);
+  min-inline-size: 375px;
+  max-inline-size: 1440px;
+  margin: 0 auto;
+  padding: 0 var(--page-padding);
+}
+
+.header {
+  position: relative;
+  height: 100vh;
+  min-height: var(--header-min-height);
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  align-items: start;
+  padding: var(--page-padding) 0;
+  background-image: url('../images/cover-image.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Декоративный элемент (квадрат для светлой темы) */
+.header__decor {
+  position: absolute;
+  top: var(--page-padding);
+  right: var(--page-padding);
+  width: 25px;
+  height: 25px;
+  border: 1px solid var(--decor-color);
+}
+
+/* Кнопки тем */
+.header__theme-menu {
+  justify-self: end;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  gap: 10px;
+}
+
+.header__theme-menu-button {
+  background: transparent;
+  border: none;
+  padding: 4px 13px;
+  cursor: pointer;
+  text-transform: lowercase;
+  transition: outline 0.3s, border 0.3s;
+}
+
+.header__theme-menu-button_active {
+  border: 1px solid var(--text-color);
+  pointer-events: none;
+}
+
+.header__theme-menu-button:hover {
+  border: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+.header__theme-menu-button:focus-visible {
+  outline: none;
+  border-bottom: 1px solid var(--text-color);
+}
+
+.header__title {
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  font-weight: bold;
+  color: var(--title-color);
+  text-shadow: var(--title-shadow);
+  line-height: 0.85;
+  margin-block-start: 0;
+  justify-self: start;
+  align-self: center;
+}
+
+@media (min-width: 768px) {
+  .header__title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+}
+
+.header__description {
+  justify-self: end;
+  max-width: 50%;
+  margin-block-start: auto;
+}
+
+.header__description-text {
+  background-color: var(--accent-color);
+  color: var(--text-color);
+  padding: 10px;
+}
+
+/* Декоративные уголки */
+.decorated-zone {
+  position: relative;
+}
+
+.decorated-corner {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border-style: solid;
+  border-color: var(--decor-color);
+  border-width: 0;
+}
+
+.decorated-corner_top-right {
+  top: var(--page-padding);
+  right: var(--page-padding);
+  border-top-width: 1px;
+  border-right-width: 1px;
+}
+
+.decorated-corner_bottom-left {
+  bottom: var(--page-padding);
+  left: var(--page-padding);
+  border-bottom-width: 1px;
+  border-left-width: 1px;
+}
+
+/* Основные секции */
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--section-gap);
+  margin: var(--section-gap) 0;
+}
+
+.section {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--card-gap);
+}
+
+@media (min-width: 768px) {
+  .section {
+    grid-template-columns: 1fr 2fr;
+  }
+  
+  .section__title {
+    grid-column: 1 / 2;
+  }
+  
+  .section__content {
+    grid-column: 2 / 3;
+  }
+  
+  .section__content_grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--card-gap);
+  }
+  
+  .section_tips .section__content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--card-gap);
+  }
+}
+
+@media (min-width: 1024px) {
+  .section__content_grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.section__title {
+  font-size: var(--main-font-size);
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+.section__title_wide {
+  grid-column: 1 / -1;
+}
+
+/* Карточки */
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.card__title {
+  font-size: var(--main-font-size);
+  font-weight: bold;
+  background-color: var(--accent-color);
+  color: var(--text-color);
+  padding: 0 10px;
+  align-self: flex-start;
+}
+
+.card__title_light {
+  font-weight: normal;
+}
+
+.card__text {
+  font-size: var(--main-font-size);
+  line-height: 1.5;
+}
+
+/* Утилита для фона */
+.title-decor {
+  background-color: var(--accent-color);
+  color: var(--text-color);
+}
+
+/* Галерея (пустой контейнер) */
+.gallery {
+  display: grid;
+  gap: var(--card-gap);
+  margin-block-start: var(--card-gap);
+}
+
+@media (min-width: 768px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Footer */
+.footer {
+  position: relative;
+  height: 100vh;
+  min-height: var(--footer-min-height);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--page-padding) 0;
+}
+
+.footer__title {
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  font-weight: bold;
+  color: var(--title-color);
+  text-shadow: var(--title-shadow);
+  line-height: 0.85;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .footer__title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
 }
