@@ -9,7 +9,7 @@
   
   <!-- Фавиконки -->
   <link rel="icon" href="./images/favicon.ico" sizes="32x32" />
-  <link rel="icon" href="./images/icon.svg" type="image/svg+xml" />
+  <link rel="icon" href="./images/favicon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="./images/mobile-icon.png" />
   
   <!-- Стили в правильном порядке -->
@@ -23,9 +23,12 @@
   <script src="./scripts/script.js" defer></script>
 </head>
 <body class="page">
+  <!-- Фоновое изображение (фиксированное) -->
+  <div class="fixed-background" aria-hidden="true"></div>
+  
+  <!-- Контент (прокручивается) -->
+  <div class="content-wrapper">
   <header class="header decorated-zone">
-    <!-- Декоративный элемент (квадрат для светлой темы) -->
-    <div class="header__decor" aria-hidden="true"></div>
     
     <nav class="header__theme-menu">
       <ul class="header__theme-menu-list">
@@ -51,8 +54,8 @@
     
     <div class="header__description">
       <p class="header__description-text title-decor">
-        Что делать, когда не можешь делать ничего<br />
-        Или почему нам так сложно сконцентрироваться,<br />
+        Что делать, когда не можешь делать ничего
+        Или почему нам так сложно сконцентрироваться,
         особенно когда очень надо
       </p>
     </div>
@@ -95,7 +98,7 @@
     
     <!-- Секция 2: Что снижает концентрацию -->
     <section class="section section_factors">
-      <h2 class="section__title">Что снижает концентрацию внимания?</h2>
+      <h2 class="section__title section__title_wide">Что снижает концентрацию внимания?</h2>
       
       <div class="section__content section__content_grid">
         <article class="card">
@@ -133,12 +136,13 @@
     
     <!-- Секция 3: Как концентрироваться лучше -->
     <section class="section section_tips">
-      <h2 class="section__title section__title_wide">
+      <h2 class="section__title">
         Как концентрироваться лучше, чем золотая рыбка (то есть дольше трёх секунд)
-      </h2>
-      
+      </h2>      
       <div class="section__content">
+        
         <article class="card">
+          <h3 class="card__title title-decor">5 простых (на самом деле не очень) советов</h3>
           <h3 class="card__title card__title_light title-decor">Представьте небо и облака</h3>
           <p class="card__text">
             Или листья в ручье. Тут дело в лёгкой медитации, которая помогает успокоиться. Ведь часто именно 
@@ -189,12 +193,20 @@
     </section>
     
     <!-- Секция 4: Галерея -->
-    <section class="section section_gallery">
+    <section class="section_gallery">
       <h2 class="section__title title-decor">А можно в картинках?</h2>
-      
-      
+       
       <div class="gallery">
-        <!-- Галерея будет заполнена позже -->
+       <div class="item">
+       <img class="sunset" src="images/sunset.png" alt="Закат в горах"> </div>
+       <div class="item">
+       <img class="ice-cream" src="images/ice-cream.png" alt="Мороженное"> </div>
+       <div class="item">
+       <img class="tape" src="images/tape.png" alt="Видеокасета"> </div>
+       <div class="item">
+       <img class="books" src="images/books.png" alt="Стопка книг"> </div>
+       <div class="item">
+       <img class="street" src="images/street.png" alt="Городская улица"> </div>
       </div>
     </section>
   </main>
@@ -206,5 +218,6 @@
     <div class="decorated-corner decorated-corner_top-right" aria-hidden="true"></div>
     <div class="decorated-corner decorated-corner_bottom-left" aria-hidden="true"></div>
   </footer>
+  </div>
 </body>
 </html>
