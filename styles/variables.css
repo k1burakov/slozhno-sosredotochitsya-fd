@@ -1,30 +1,22 @@
-/*
-  Переменные для вашего проекта
-  и их переопределение под различные устройства
-*/
-
 :root {
-  /* Основные цвета светлой темы */
-  --accent-color: #FFC2E6;  
-  --text-color: #000000;
-  --background-color: #FFFFFF;
-  --title-color: #000000;
-  --card-bg-color: #FFF0F5;  
-  --decor-color: #000000;     /* цвет для уголков */
-  
   /* Отступы */
-  --page-padding: 20px;
-  --section-gap: 40px;
-  --card-gap: 20px;
+  --page-padding: 10px;
+  --section-gap: 50px;
+  --card-gap: 0;
   
   /* Шрифты */
   --main-font: 'IBM Plex Mono', monospace;
   --main-font-size: 18px;
   
-  /* Тень для заголовков */
-  --title-shadow: 4px 4px 0 var(--accent-color);
-  
   /* Размеры */
   --header-min-height: 668px;
   --footer-min-height: 668px;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --card-gap: 20px;
+    --page-padding: 20px;
+    --section-gap: 80px;
+  }
 }
