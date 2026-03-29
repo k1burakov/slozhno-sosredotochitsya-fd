@@ -6,9 +6,13 @@
   --decor-color: #353430;
   --bg-img: url('../images/cover-image-light.png');
   --title-text-color: #353430;
-  --title-secondary-color: #353430;
+  --subtitle-color: #353430;
   --button-color: #353430;
   --title-shadow: 4px 4px 0 #ff8dcb;
   --link-shadow: 2px 2px 0 #ff8dcb;
   --button-color-hover: #32312D66;
 }
+
+
+
+
