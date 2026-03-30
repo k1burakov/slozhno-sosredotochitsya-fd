@@ -1,26 +1,27 @@
 :root {
   --accent-color: #ff8dcb;
   --text-color: #353430;
-  --background-color: #FFF1F7;
+  --background-color: #fff1f7;
   --title-color: #ffc2e6;
   --decor-color: #353430;
-  --bg-img: url('../images/cover-image-light.png');
+  --bg-img: url("../images/cover-image-light.png");
   --title-text-color: #353430;
   --subtitle-color: #353430;
   --button-color: #353430;
   --title-shadow: 4px 4px 0 #ff8dcb;
+  --footer-shadow: 2px 2px 0 #ff8dcb;
   --link-shadow: 2px 2px 0 #ff8dcb;
-  --button-color-hover: #32312D66;
-  
+  --button-color-hover: #32312d66;
+
   /* Отступы */
   --page-padding: 10px;
   --section-gap: 50px;
   --card-gap: 0;
-  
+
   /* Шрифты */
-  --main-font: 'IBM Plex Mono', monospace;
+  --main-font: "IBM Plex Mono", monospace;
   --main-font-size: 18px;
-  
+
   /* Размеры */
   --header-min-height: 668px;
   --footer-min-height: 668px;
@@ -33,5 +34,3 @@
     --section-gap: 80px;
   }
 }
-
-
